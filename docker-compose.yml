@@ -1,0 +1,15 @@
+version: '2'
+services:
+  worker:
+    image: php:7.0-cli
+    links:
+      - 'pubsub:pubsub'
+    volumes:
+      - './:/app'
+    working_dir: /app
+    command: php application.php
+    env_file:
+      - ./.env
+  pubsub:
+    image: storytel/google-cloud-pubsub-emulator
+    command: --host=0.0.0.0 --port=8085

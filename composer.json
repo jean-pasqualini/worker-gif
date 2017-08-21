@@ -1,0 +1,6 @@
+{
+    "require": {
+        "mnapoli/silly": "^1.6",
+        "superbalist/php-pubsub-google-cloud": "5.0.*"
+    }
+}
